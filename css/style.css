@@ -1,0 +1,10 @@
+@import "variable.css";
+@import "index.css";
+
+body {
+  margin: 0;
+}
+
+.mainScreen {
+  padding: var(--horizontal-space);
+}
