@@ -1,0 +1,50 @@
+.testQuetions {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionBox {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.answerBox {
+  margin-top: 50px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* answerList는 test.js에서 awerBtn에게 부여해준 class명 */
+.answerList {
+  height: 70px;
+  margin: 10px 0;
+  padding-left: 20px;
+  text-align: left;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  animation: fadeIn 0.5s linear;
+}
+
+.answerList:nth-child(2n) {
+  opacity: 0;
+  animation: fadeIn 0.5s linear forwards;
+  animation-delay: 0.4s;
+}
+
+.answerList:hover {
+  background-color: #bfdeff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.answerBox:focus {
+  animation: fadeOut 5s ease-in-out;
+}
