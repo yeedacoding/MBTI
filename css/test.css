@@ -45,6 +45,22 @@
   transition: 0.2s ease-in-out;
 }
 
+/* button을 클릭하면 fadeOut되는 animation구현이 안됨 ㅠ */
 .answerBox:focus {
   animation: fadeOut 5s ease-in-out;
+}
+
+.statusLine {
+  margin-top: 30px;
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  background-color: rgba(209, 209, 209, 0.3);
+}
+
+.statusBar {
+  height: 100%;
+  border-radius: 10px;
+  background-color: skyblue;
+  transition: 0.3s ease-in-out;
 }

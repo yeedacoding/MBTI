@@ -2,7 +2,7 @@
 
 const main = document.querySelector(".mainScreen");
 const testQuestions = document.querySelector(".testQuestions");
-
+const endQuestions = 80
 
 // 시작하기 버튼을 눌렀을 때 실행되는 것
 // function begin(){
@@ -17,7 +17,6 @@ function addAnswerBtn(answerText, questionIdx) {
     const answerBox = document.querySelector(".answerBox");
     const answerBtn = document.createElement("button");             //createElement --> button형식으로 만듦
     answerBtn.classList.add("answerList");                       //answerBtn의 class명 지정
-    
     answerBox.appendChild(answerBtn);
     answerBtn.innerHTML = answerText;
 
@@ -39,8 +38,11 @@ function nextQuestion(questionIdx) {
     for(let i in questionList[questionIdx].a){
         addAnswerBtn(questionList[questionIdx].a[i].answer, questionIdx);
     }
+    const status = document.querySelector('.statusBar');
+    status.style.width = (100/endQuestions) * (questionIdx + 1) + '%';
 }
 const questionIdx = 0;
 nextQuestion(questionIdx);
 
+// statusBar 안에 진행률을 숫자+%로 구현해보기
 
