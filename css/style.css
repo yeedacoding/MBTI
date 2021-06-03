@@ -1,8 +1,10 @@
-@import "variable.css";
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Nanum+Myeongjo&family=Song+Myung&display=swap");
+@import "default.css";
 @import "index.css";
 
 body {
   margin: 0;
+  font-family: "Nanum Myeongjo", serif;
 }
 
 .mainScreen {

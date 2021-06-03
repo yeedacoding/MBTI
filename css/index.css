@@ -6,12 +6,15 @@
 }
 
 .introText_title {
-  margin-top: 50px;
+  margin-top: 100px;
+  text-align: center;
 }
 
 .introText_subtitle {
   margin-top: 10px;
   margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .mainContents {
@@ -25,9 +28,10 @@
 
 .mainContents_name {
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 5%;
+  align-items: center;
+  text-align: center;
+  width: 10%;
   height: 44px;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
@@ -36,13 +40,17 @@
 }
 
 .nameText {
-  width: 95%;
+  width: 90%;
   height: 40px;
   font-size: 16px;
   padding-left: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.nameText:focus {
+  outline: 5px solid rgba(128, 189, 255, 0.5);
 }
 
 .startTest {
@@ -58,7 +66,7 @@
   box-sizing: border-box;
   font-size: 16px;
   color: white;
-  background-color: blue;
+  background-color: rgba(128, 189, 255);
   margin-top: 20px;
   border: none;
   border-radius: 5px;
@@ -66,4 +74,6 @@
 
 .startTest_btn:hover {
   cursor: pointer;
+  background-color: blue;
+  transition: 0.3s ease-in-out;
 }
