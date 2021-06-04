@@ -1,16 +1,6 @@
 // 질문과 답변고르기 page
 
-const main = document.querySelector(".mainScreen");
-const testQuestions = document.querySelector(".testQuestions");
 const endQuestions = 80
-
-// 시작하기 버튼을 눌렀을 때 실행되는 것
-// function begin(){
-//     main.style.animation= "fadeOut 1s";
-//     testQuestions.style.animation = "fadeIn 1s";
-//     //main.style.display = "none";
-//     //testQuestions.style.display = "block";
-// }
 
 //anwer를 버튼으로 만들기
 function addAnswerBtn(answerText, questionIdx) {
@@ -33,14 +23,19 @@ function addAnswerBtn(answerText, questionIdx) {
 
 //계속해서 다음 question, answer보기가 나오도록 만들기
 function nextQuestion(questionIdx) {
-    const question = document.querySelector(".questionBox");
-    question.innerHTML = questionList[questionIdx].q;
-    for(let i in questionList[questionIdx].a){
-        addAnswerBtn(questionList[questionIdx].a[i].answer, questionIdx);
+    if (questionIdx >= endQuestions) {                          //questionIdx(질문 인덱스)가 endQuestions(80)개보다 많아지면 result.html로 넘어간다.
+         window.location.href="result.html";  
+         return;                                                // 이것 때문에 오류나서 죽을뻔;;
+    } else {
+        const question = document.querySelector(".questionBox");
+        question.innerHTML = questionList[questionIdx].q;
+        for (let i in questionList[questionIdx].a) {
+            addAnswerBtn(questionList[questionIdx].a[i].answer, questionIdx);
+        }
+        const status = document.querySelector('.statusBar');
+        status.style.width = (100/endQuestions) * (questionIdx + 1) + '%';
     }
-    const status = document.querySelector('.statusBar');
-    status.style.width = (100/endQuestions) * (questionIdx + 1) + '%';
-}
+};
 const questionIdx = 0;
 nextQuestion(questionIdx);
 
