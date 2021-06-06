@@ -8,21 +8,28 @@
 </head>
 <body>
     <main class="mainScreen">
-        <div class="statusLine">
-            <div class="statusBar">
-                
+        <section class="qna">
+            <div class="statusLine">
+                <div class="statusBar">
+                    
+                </div>
             </div>
-        </div>
-        <div class="testQuetions">
-            <div class="questionBox">
-                <!-- questionList에서 가져온 질문들이 들어가는 공간 -->
+            <div class="testQuetions">
+                <div class="questionBox">
+                    <!-- questionList에서 가져온 질문들이 들어가는 공간 -->
+                </div>
+                <div class="answerBox">
+                    <!-- answer(예, 아니오)가 button으로 들어가는 공간 -->
+                </div>
             </div>
-            <div class="answerBox">
-                <!-- answer(예, 아니오)가 button으로 들어가는 공간 -->
-            </div>
-        </div>
+        </section>
+        <section class="result">
+            <h1>당신의 결과는?</h1>
+            <div class="resultName"></div>
+            <div class="resultDesc"></div>
+        </section>
     </main>
     <script src="js/data.js" charset="utf-8"></script>
-    <script src="js/test.js" charset="utf-8"></script>
+    <script src="js/test.js"  charset="utf-8"></script>
 </body>
 </html>
