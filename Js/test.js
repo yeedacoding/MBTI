@@ -3,27 +3,27 @@ const qna = document.querySelector(".qna");
 const result = document.querySelector(".result");
 const endQuestions = 80;
 const selectBtn = [];                                       // 사용자가 버튼을 누를때마다 추가
-const resultMBTI = [];
 const typeArray = [
-        {name : "E", value : 0, key : 0},
-        {name : "I", value : 0, key : 1},
-        {name : "S", value : 0, key : 2},
-        {name : "N", value : 0, key : 3},
-        {name : "F", value : 0, key : 4},
-        {name : "T", value : 0, key : 5},
-        {name : "J", value : 0, key : 6},
-        {name : "P", value : 0, key : 7},
+        {name : "E", value : 0},
+        {name : "I", value : 0},
+        {name : "S", value : 0},
+        {name : "N", value : 0},
+        {name : "F", value : 0},
+        {name : "T", value : 0},
+        {name : "J", value : 0},
+        {name : "P", value : 0},
     ]
-let mbti = {
+const mbti = {
     part1 : {E:0,I:0},
     part2 : {S:0,N:0},
     part3 : {T:0,F:0},
     part4 : {J:0,P:0},
     type:[]
-};
+    };
+const resultMBTI = mbti.type;
+
 
 function calResult() {
-    
     for(let i = 0; i < endQuestions; i++){
         var target = questionList[i].a[selectBtn[i]];
         for(let j = 0; j < target.type.length; j++){                 //type에 대한 반복
@@ -74,7 +74,7 @@ function calResult() {
         console.log(`P`)
         mbti.type.push('P');
     } 
-    console.log(mbti.type.join(''));
+    console.log(resultMBTI.join(''));
     const resultArray = typeArray.sort(function(a,b){
         if(a.value > b.value){
             return -1;
@@ -88,13 +88,44 @@ function calResult() {
 }
 
 function setResult(){
-    let point = calResult();
+    calResult();
     const resultName = document.querySelector(".resultName");
-    resultName.innerHTML = mbti.type.join('');
-    // mbti.type.join('') === ressultList.type ? => 해당 dessc 출력하기
+    resultName.innerHTML = resultMBTI.join('');
+    // resultMBTI.join('') === resultList.key ? => 해당 resultDesc 출력하기      // 해당 key값의 value를 출력한다 {key1 : value1, key2 : value2}
     const resultDesc = document.querySelector(".resultDesc");
-    resultDesc.innerHTML = resultsList[point].desc;
-    
+    if(resultMBTI.join('') === 'ISTJ'){
+        resultDesc.innerHTML = resultsList.ISTJ;
+      } else if (resultMBTI.join('') === 'ISFJ') {
+        resultDesc.innerHTML = resultsList.ISFJ;
+      } else if (resultMBTI.join('') === 'INFJ') {
+        resultDesc.innerHTML = resultsList.INFJ;
+      } else if (resultMBTI.join('') === 'INTJ') {
+        resultDesc.innerHTML = resultsList.INTJ;
+      } else if (resultMBTI.join('') === 'ISTP') {
+        resultDesc.innerHTML = resultsList.ISTP;
+      } else if (resultMBTI.join('') === 'ISFP') {
+        resultDesc.innerHTML = resultsList.ISFP;
+      } else if (resultMBTI.join('') === 'INFP') {
+        resultDesc.innerHTML = resultsList.INFP;
+      } else if (resultMBTI.join('') === 'INTP') {
+        resultDesc.innerHTML = resultsList.INTP;
+      } else if (resultMBTI.join('') === 'ESTP') {
+        resultDesc.innerHTML = resultsList.ESTP;
+      } else if (resultMBTI.join('') === 'ESFP') {
+        resultDesc.innerHTML = resultsList.ESFP;
+      } else if (resultMBTI.join('') === 'ENFP') {
+        resultDesc.innerHTML = resultsList.ENFP;
+      } else if (resultMBTI.join('') === 'ENTP') {
+        resultDesc.innerHTML = resultsList.ENTP;
+      } else if (resultMBTI.join('') === 'ESTJ') {
+        resultDesc.innerHTML = resultsList.ESTJ;
+      } else if (resultMBTI.join('') === 'ESFJ') {
+        resultDesc.innerHTML = resultsList.ESFJ;
+      } else if (resultMBTI.join('') === 'ENFJ') {
+        resultDesc.innerHTML = resultsList.ENFJ;
+      } else if (resultMBTI.join('') === 'ENTJ') {
+        resultDesc.innerHTML = resultsList.ENTJ;
+      }  
 }
 
 function goResult(){
